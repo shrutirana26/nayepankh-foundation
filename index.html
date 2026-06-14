@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NayePankh Foundation | Giving Youth the Wings to Soar</title>
   <meta name="description" content="NayePankh Foundation is a youth empowerment and education NGO giving new wings to underprivileged children through education, mentorship, and opportunity.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/logo.png">
   
   <!-- Google Fonts: Playfair Display for headings & Inter for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -274,29 +277,38 @@
     .logo {
       display: flex;
       align-items: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #FFFFFF;
       gap: 10px;
+      text-decoration: none;
     }
 
-    body.light-mode header:not(.scrolled) .logo {
-      color: #FFFFFF; /* Remain white over hero gradient */
+    .logo-img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      transition: transform var(--transition-slow), filter var(--transition-standard);
+      /* Slight white glow so logo pops on dark nav */
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
     }
 
-    .logo span {
-      color: var(--color-accent);
+    .logo:hover .logo-img {
+      transform: scale(1.06);
+      filter: drop-shadow(0 4px 12px rgba(245,166,35,0.45));
     }
 
-    .logo i {
-      font-size: 1.4rem;
-      transform: rotate(-15deg);
-      transition: transform var(--transition-slow);
+    /* Responsive: shrink logo on smaller screens */
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 48px;
+      }
     }
 
-    .logo:hover i {
-      transform: rotate(15deg) scale(1.2);
+    @media (max-width: 480px) {
+      .logo-img {
+        height: 42px;
+      }
     }
 
     .nav-links {
@@ -1766,8 +1778,14 @@
        ========================================== -->
   <header id="main-header">
     <div class="container nav-container">
-      <a href="#" class="logo">
-        <i class="fa-solid fa-paper-plane"></i> Naye<span>Pankh</span>
+      <a href="#" class="logo" aria-label="NayePankh Foundation - Home">
+        <img
+          src="assets/logo.png"
+          alt="NayePankh Foundation Logo"
+          class="logo-img"
+          width="180"
+          height="60"
+        />
       </a>
       
       <ul class="nav-links" id="nav-links">
